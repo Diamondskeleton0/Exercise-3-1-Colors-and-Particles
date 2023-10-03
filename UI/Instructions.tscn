@@ -1,12 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://1rnbjmcx1n5y"]
+[gd_scene load_steps=4 format=3 uid="uid://1rnbjmcx1n5y"]
 
 [ext_resource type="Script" path="res://UI/Instructions.gd" id="1"]
+[ext_resource type="Theme" uid="uid://dtecx0tdsnuoj" path="res://UI/UI.tres" id="1_6stwm"]
+[ext_resource type="Theme" uid="uid://d4kmvuhlaaker" path="res://UI/Title.tres" id="3_tu0yq"]
 
 [node name="Instructions" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_6stwm")
 script = ExtResource("1")
 
 [node name="Background" type="ColorRect" parent="."]
@@ -20,6 +25,7 @@ layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_bottom = -440.0
+theme = ExtResource("3_tu0yq")
 horizontal_alignment = 1
 vertical_alignment = 1
 

@@ -10,12 +10,15 @@ func _ready():
 	target = Vector2(Global.VP.x / 2, Global.VP.y - width)
 
 func _physics_process(_delta):
-	target.x = clamp(target.x, 0, Global.VP.x - 2*width)
+	target.x = clamp(target.x, 0, Global.VP.x)
 	position = target
+	if $Highlight.modulate.a > 0:
+		$Highlight.modulate.a -= decay
 
 func _input(event):
 	if event is InputEventMouseMotion:
 		target.x += event.relative.x
 
 func hit():
-	pass
+	$Highlight.modulate.a = 1.0
+	$Confetti.emitting = true
